@@ -75,6 +75,10 @@ body {
     font-size: 1.125rem;
     font-weight: 600;
     letter-spacing: 0.1em;
+    opacity: 1;                /* fully visible at top */
+    filter: blur(0px);         /* sharp */
+    transform: scale(1);       /* optional, can add subtle scale */
+    transition: none;          /* scroll will control animation */
     color: var(--color-white);
     mix-blend-mode: inherit;
     font-family: 'DeathStranding';

@@ -160,3 +160,19 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         heroVideo.style.animationPlayState = 'paused';
     }
 }
+
+const brand = document.querySelector('.nav-brand');
+const hero = document.querySelector('.hero');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const heroHeight = hero.offsetHeight;
+
+  // Progress: 0 at top of hero, 1 at bottom
+  const progress = Math.min(Math.max(scrollY / heroHeight, 0), 1);
+
+  // Animate: full → gone
+  brand.style.opacity = 1 - progress;           // 1 → 0
+  brand.style.filter = `blur(${progress * 2}px)`; // optional blur 0 → 2px
+  brand.style.transform = `scale(${1 - progress * 0.05})`; // optional scale 1 → 0.95
+});
