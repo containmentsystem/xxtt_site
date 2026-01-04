@@ -62,7 +62,7 @@ contactForm.addEventListener('submit', function(e) {
     
     // Simulate API call
     setTimeout(() => {
-        alert('Thank you for your message! I will get back to you soon.');
+        alert('ദ്ദി◝ ⩊ ◜)');
         contactForm.reset();
         submitButton.textContent = originalText;
         submitButton.disabled = false;
