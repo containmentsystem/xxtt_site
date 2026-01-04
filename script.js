@@ -16,12 +16,6 @@ navLinks.forEach(link => {
     });
 });
 
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -36,6 +30,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
 
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
@@ -96,7 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Preload images for better performance (excluding removed hero image)
 const imageUrls = [
-    //image pathing here
+    './assets/images/brokenlaptop.jpg',
+    './assets/images/image.png',
+    './assets/images/IMAGE_0985.jpg',
+    './assets/images/Screenshot 2023-11-17 041155.png'
 ];
 
 function preloadImages() {
