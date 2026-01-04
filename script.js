@@ -33,40 +33,55 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Contact form handling
 const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', function(e) {
+
+contactForm.addEventListener('submit', async function (e) {
     e.preventDefault();
-    
+
     // Get form data
     const formData = new FormData(contactForm);
     const name = formData.get('name');
     const email = formData.get('email');
     const message = formData.get('message');
-    
+
     // Simple validation
     if (!name || !email || !message) {
         alert('Please fill in all fields.');
         return;
     }
-    
+
     if (!isValidEmail(email)) {
         alert('Please enter a valid email address.');
         return;
     }
-    
-    // Simulate form submission
+
+    // Button state
     const submitButton = contactForm.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
-    
+
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
-    
-    // Simulate API call
-    setTimeout(() => {
-        alert('ദ്ദി◝ ⩊ ◜)');
-        contactForm.reset();
+
+    try {
+        const response = await fetch('https://formspree.io/f/xnjnodje', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            alert('ദ്ദി◝ ⩊ ◜)');
+            contactForm.reset();
+        } else {
+            alert('Something went wrong. Please try again.');
+        }
+    } catch (error) {
+        alert('Network error. Please try again later.');
+    } finally {
         submitButton.textContent = originalText;
         submitButton.disabled = false;
-    }, 1500);
+    }
 });
 
 // Email validation function
@@ -74,6 +89,7 @@ function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
+
 
 // Add intersection observer for work items animation
 const observerOptions = {
