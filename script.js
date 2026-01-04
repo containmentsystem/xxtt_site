@@ -165,14 +165,21 @@ const brand = document.querySelector('.nav-brand');
 const hero = document.querySelector('.hero');
 
 window.addEventListener('scroll', () => {
+  // Mobile check: only animate if hero exists
+  if (!hero) return;
+
   const scrollY = window.scrollY;
   const heroHeight = hero.offsetHeight;
 
-  // Progress: 0 at top of hero, 1 at bottom
-  const progress = Math.min(Math.max(scrollY / heroHeight, 0), 1);
+  // Prevent division by zero or tiny hero
+  if (heroHeight === 0) return;
 
-  // Animate: full → gone
-  brand.style.opacity = 1 - progress;           // 1 → 0
-  brand.style.filter = `blur(${progress * 2}px)`; // optional blur 0 → 2px
-  brand.style.transform = `scale(${1 - progress * 0.05})`; // optional scale 1 → 0.95
+  // Progress from 0 → 1
+  let progress = scrollY / heroHeight;
+  progress = Math.min(Math.max(progress, 0), 1); // clamp 0-1
+
+  // Animate brand: fully visible → gone
+  brand.style.opacity = 1 - progress;
+  brand.style.filter = `blur(${progress * 2}px)`;       // optional
+  brand.style.transform = `scale(${1 - progress * 0.05})`; // optional subtle scale
 });
