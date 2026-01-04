@@ -122,6 +122,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 // This is normal on some browsers/devices
             });
         });
+        
+        // Pause video when not visible (performance optimization)
+        const videoObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    heroVideo.play().catch(e => console.warn('Video play failed:', e));
+                } else {
+                    heroVideo.pause();
+                }
+            });
+        });
+        
+        videoObserver.observe(heroVideo);
+    }
 });
 
 // Preload images for better performance (excluding removed hero image)
