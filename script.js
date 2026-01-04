@@ -98,7 +98,8 @@ const imageUrls = [
     './assets/images/brokenlaptop.jpg',
     './assets/images/image.png',
     './assets/images/IMAGE_0985.jpg',
-    './assets/images/Screenshot 2023-11-17 041155.png'
+    './assets/images/Screenshot 2023-11-17 041155.png',
+    './assets/images/IMG_7405.JPG'
 ];
 
 function preloadImages() {
