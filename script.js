@@ -122,29 +122,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 // This is normal on some browsers/devices
             });
         });
-        
-        // Pause video when not visible (performance optimization)
-        const videoObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    heroVideo.play().catch(e => console.warn('Video play failed:', e));
-                } else {
-                    heroVideo.pause();
-                }
-            });
-        });
-        
-        videoObserver.observe(heroVideo);
-    }
 });
 
 // Preload images for better performance (excluding removed hero image)
 const imageUrls = [
-    'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?w=600&h=800&fit=crop',
-    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1541462608143-67571c6738dd?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=400&fit=crop'
+    //image pathing here
 ];
 
 function preloadImages() {
