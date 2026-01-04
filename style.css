@@ -493,20 +493,20 @@ body {
     }
 }
 
-/* Testimonial Section */
-.testimonial-section {
+
+.extra-section {
     padding: 4rem 0;
     background-color: var(--color-white);
     color: var(--color-black);
 }
 
-.testimonial {
+.extra {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
-.testimonial-text {
+.extra-text {
     font-family: 'DeathStranding';
     font-size: 1.5rem;
     line-height: 1.5;
@@ -515,14 +515,14 @@ body {
     color: var(--color-black);
 }
 
-.testimonial-author {
+.extra-author {
     font-size: 0.9rem;
     color: var(--color-gray-300);
     font-weight: 500;
 }
 
 @media (min-width: 768px) {
-    .testimonial-text {
+    .extra-text {
         font-size: 1.75rem;
     }
 }
@@ -679,7 +679,7 @@ body {
         padding: 0 1rem;
     }
     
-    .testimonial-text {
+    .extra-text {
         font-size: 1.25rem;
     }
 }
