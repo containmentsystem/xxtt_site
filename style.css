@@ -346,7 +346,7 @@ body {
 
 /* About Section */
 .about-section {
-    padding: 6rem 0;
+    padding: 2rem 0;
     background-color: var(--color-gray-100);
     font-family: 'DeathStranding';
 }
