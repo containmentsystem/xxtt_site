@@ -36,7 +36,7 @@ html {
 }
 
 body {
-    font-family: var(--font-primary);
+    font-family: 'DeathStranding';
     line-height: 1.6;
     color: var(--color-white);
     background-color: var(--color-black);
@@ -260,6 +260,7 @@ body {
     color: var(--color-black);
     text-decoration: none;
     font-weight: 500;
+    font-family: 'DeathStranding';
     font-size: 0.9rem;
     letter-spacing: 0.025em;
     transition: var(--transition);
@@ -576,7 +577,6 @@ body {
     font-size: 0.9rem;
     font-weight: 500;
     transition: var(--transition);
-    text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
@@ -597,7 +597,7 @@ body {
     border: 1px solid var(--color-gray-300);
     background-color: var(--color-gray-200);
     color: var(--color-white);
-    font-family: var(--font-primary);
+    font-family: 'DeathStranding';
     font-size: 1rem;
     transition: var(--transition);
     resize: vertical;
